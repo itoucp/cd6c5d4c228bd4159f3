@@ -431,6 +431,7 @@ var _defineProperty = __webpack_require__(1);
             station_user_id: itou.localJson.getJson('/user/shop/details/').id,
             station_uuid: itou.localJson.getJson('/user/shop/details/').uuid
           },
+          apiType: 'itApi',
           showErr: true //--接口超时是否跳转错误页面
         });
       };
@@ -803,7 +804,8 @@ var _defineProperty = __webpack_require__(1);
           url: 'shuzi/chart',
           data: {
             lottery_type: key
-          }
+          },
+          apiType: 'itApi'
         }).then(function (data) {
           self.reload(data);
         });

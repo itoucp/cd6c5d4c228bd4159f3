@@ -110,6 +110,8 @@
 
   //--获取彩种匹配赛事匹配的推荐数量
   dachang.getBetMatchGrcmdNum = function () {
+    //关闭不获取fd
+    return;
     var shop = itou.localJson.getJson('/user/shop/details/'); //--店铺id信息
     var self = this;
     return itou.get({
@@ -120,7 +122,8 @@
       },
       rnd: false,
       notoken: true,
-      noToast: true
+      noToast: true,
+      apiType: 'itApi'
     }).then(function () {
       var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       self.grcmdNum = data;

@@ -729,7 +729,8 @@ __webpack_require__.r(__webpack_exports__);
       }
       return itou.get({
         url: url,
-        data: data
+        data: data,
+        apiType: 'itApi'
       }).then(function (data) {
         self.opts = data.league_list;
         return self.checkData(); //--检查冗余数据
@@ -2408,7 +2409,8 @@ __webpack_require__.r(__webpack_exports__);
       }
       return itou.get({
         url: url,
-        data: data
+        data: data,
+        apiType: 'itApi'
       }).then(function (data) {
         self.reload(data);
       });
@@ -2839,7 +2841,8 @@ __webpack_require__.r(__webpack_exports__);
       data.league_name = JSON.stringify(search.selected);
       return itou.get({
         url: url,
-        data: data
+        data: data,
+        apiType: 'itApi'
       });
     };
     endGoal.prototype.getList = function () {

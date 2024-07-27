@@ -433,7 +433,8 @@ var _typeof = __webpack_require__(3);
       //--下载页面所处域名
       api: {
         //--接口多域名支持
-        match: '//match-api.91bixin.net/'
+        match: '//match-api.91bixin.net/',
+        itApi: '//apic.91bixin.net/api/'
       }
     },
     development: {

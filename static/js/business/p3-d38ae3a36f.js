@@ -311,7 +311,8 @@ __webpack_require__.r(__webpack_exports__);
           lottery_type: Model.pageType
         },
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       }).then(function (data) {
         self.reload(data);
       });
@@ -414,7 +415,8 @@ __webpack_require__.r(__webpack_exports__);
       url: 'sharebuy/allowusesharebuy',
       data: {
         station_id: self.station_id
-      }
+      },
+      apiType: 'itApi'
     });
   };
   Model.prototype.getHemaiStatus = function () {
@@ -423,7 +425,8 @@ __webpack_require__.r(__webpack_exports__);
       url: 'sharebuy/issupport',
       data: {
         station_id: self.station_id
-      }
+      },
+      apiType: 'itApi'
     });
   };
   window.pageLoad = function () {
@@ -944,6 +947,8 @@ var maps = {
       }
       this.station_user_id = station_user_id;
       this.lottery_type = lottery_type;
+      //不用获取fd
+      return {"errcode":0,"msg":"success","data":{"room_list":[],"is_show":false}};
       return itou.get({
         url: 'chdd/livingRoom',
         data: {

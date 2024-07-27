@@ -830,7 +830,8 @@ __webpack_require__.r(__webpack_exports__);
         url: 'sharebuy/allowusesharebuy',
         data: {
           station_id: self.parent.station_id
-        }
+        },
+        apiType: 'itApi'
       });
     };
     self.getHemaiStatus = function () {
@@ -838,7 +839,8 @@ __webpack_require__.r(__webpack_exports__);
         url: 'sharebuy/issupport',
         data: {
           station_id: self.parent.station_id
-        }
+        },
+        apiType: 'itApi'
       });
     };
     self.getFinishCount = function () {
@@ -848,7 +850,8 @@ __webpack_require__.r(__webpack_exports__);
           lottery_type: 'ToTo'
         },
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       }).then(function (data) {
         var Arr = [];
         for (var i in data) {
@@ -870,7 +873,8 @@ __webpack_require__.r(__webpack_exports__);
           lottery_type: 'ToTo',
           station_user_id: itou.localJson.getJson('/user/shop/details/').id,
           station_uuid: itou.localJson.getJson('/user/shop/details/').uuid
-        }
+        },
+        apiType: 'itApi'
       }).then(function (data) {
         var Arr = [];
         data.list.forEach(function (caiqiItem, index) {
@@ -934,6 +938,7 @@ __webpack_require__.r(__webpack_exports__);
           station_user_id: itou.localJson.getJson('/user/shop/details/').id,
           station_uuid: itou.localJson.getJson('/user/shop/details/').uuid
         },
+        apiType: 'itApi',
         showErr: true //--接口超时是否跳转错误页面
       }).then(function (data) {
         var Arr = [],

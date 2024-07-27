@@ -618,7 +618,8 @@
         },
 
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       }).then(function (data) {
         var list = data.league_list,
           sport = $setting.sport,
@@ -2287,6 +2288,7 @@
         data: d,
         rnd: false,
         notoken: true,
+        apiType: 'itApi',
         showErr: true //--接口超时是否跳转错误页面
       }).then(function (data) {
         var r = {},
@@ -2338,7 +2340,8 @@
           lottery_type: self.currpt
         },
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       }).then(function (data) {
         var r = {};
         if (!itou.outil.is(data, 'Array')) {
@@ -2513,7 +2516,8 @@
           url: 'sharebuy/allowusesharebuy',
           data: {
             station_id: self.station_id
-          }
+          },
+          apiType: 'itApi'
         }).then(function (result) {
           self.is_allow = result.is_allow ? 'open' : 'close';
           itou.localJson.setJson('is_allow' + self.station_id, {
@@ -2531,7 +2535,8 @@
           url: 'sharebuy/issupport',
           data: {
             station_id: self.station_id
-          }
+          },
+          apiType: 'itApi'
         }).then(function (result) {
           self.hemai_allow = result.share_buy ? 'open' : 'close';
           itou.localJson.setJson('share_buy' + self.station_id, {

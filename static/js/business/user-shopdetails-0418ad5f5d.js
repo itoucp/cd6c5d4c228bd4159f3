@@ -3632,7 +3632,8 @@ $(function () {
           station_id: self.station_user_id
         },
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       }).then(function (data) {
         self.stat.hemai.avail = data.num;
       });
@@ -3644,7 +3645,8 @@ $(function () {
           station_id: self.station_user_id
         },
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       });
     };
     self.getHemaiStatus = function () {
@@ -3654,7 +3656,8 @@ $(function () {
           station_id: self.station_user_id
         },
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       });
     };
     self.getGendan = function () {
@@ -3690,7 +3693,8 @@ $(function () {
           station_uid: self.station_user_id
         },
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       }).then(function (data) {
         var _data$list, _data$tip;
         self.stat2.gendan = (_data$list = data === null || data === void 0 ? void 0 : data.list) !== null && _data$list !== void 0 ? _data$list : [];
@@ -3855,7 +3859,8 @@ $(function () {
           // station_uuid: itou.localJson.getJson("/user/shop/details/").uuid
         },
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       }).then(function (data) {
         self.jingcai.football = data.soccer_count > 0 ? data.soccer_count + '场比赛' : '暂无比赛';
         self.jingcai.basketball = data.basket_count > 0 ? data.basket_count + '场比赛' : '暂无比赛';

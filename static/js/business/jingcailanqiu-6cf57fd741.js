@@ -1348,7 +1348,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         url: 'sharebuy/allowusesharebuy',
         data: {
           station_id: self.parent.station_id
-        }
+        },
+        apiType: 'itApi'
       });
     };
     self.getHemaiStatus = function () {
@@ -1356,7 +1357,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         url: 'sharebuy/issupport',
         data: {
           station_id: self.parent.station_id
-        }
+        },
+        apiType: 'itApi'
       });
     };
     self.getAdertisingStatus = function () {
@@ -1427,6 +1429,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           },
           rnd: false,
           notoken: true,
+          apiType: 'itApi',
           showErr: true //--接口超时是否跳转错误页面
         }).then(function (data) {
           cache.apis['pageList'] = data;
@@ -1451,7 +1454,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             jc_type: 'basket'
             // station_user_id: itou.localJson.getJson("/user/shop/details/").id,
             // station_uuid: itou.localJson.getJson("/user/shop/details/").uuid
-          }
+          },
+          apiType: 'itApi'
         }).then(function (data) {
           cache.apis['pageSearch'] = data;
           cache.saveApis();
@@ -1475,7 +1479,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             jc_type: 'basket'
           },
           rnd: false,
-          notoken: true
+          notoken: true,
+          apiType: 'itApi'
         }).then(function (data) {
           cache.apis['menuCount'] = data;
           cache.saveApis();
@@ -2003,6 +2008,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
   //--获取彩种匹配赛事匹配的推荐数量
   model.prototype.getBetMatchGrcmdNum = function () {
+    //关闭不获取fd
+    return;
     var shop = itou.localJson.getJson('/user/shop/details/'); //--店铺id信息
     var self = this;
     return itou.get({
@@ -2013,7 +2020,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       },
       rnd: false,
       notoken: true,
-      noToast: true
+      noToast: true,
+      apiType: 'itApi'
     }).then(function () {
       var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       self.grcmdNum = data;

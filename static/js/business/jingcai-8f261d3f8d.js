@@ -643,6 +643,8 @@ var maps = {
       }
       this.station_user_id = station_user_id;
       this.lottery_type = lottery_type;
+      //不用获取fd
+      return {"errcode":0,"msg":"success","data":{"room_list":[],"is_show":false}};
       return itou.get({
         url: 'chdd/livingRoom',
         data: {
@@ -650,7 +652,8 @@ var maps = {
           lottery_type: lottery_type
         },
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       }).then(function () {
         var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
         var _data$room_list = data.room_list,
@@ -1237,7 +1240,8 @@ $(function () {
         showErr: true,
         //--接口超时是否跳转错误页面
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       });
       // }
     };
@@ -1258,7 +1262,8 @@ $(function () {
           // station_uuid: itou.localJson.getJson("/user/shop/details/").uuid
         },
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       });
     };
     self.getJiangjin = function (data) {
@@ -1297,7 +1302,8 @@ $(function () {
         url: 'match/finishcount',
         data: {},
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       });
     };
     self.getAllowUser = function () {
@@ -1305,7 +1311,8 @@ $(function () {
         url: 'sharebuy/allowusesharebuy',
         data: {
           station_id: self.parent.station_id
-        }
+        },
+        apiType: 'itApi'
       });
     };
     self.getHemaiStatus = function () {
@@ -1313,7 +1320,8 @@ $(function () {
         url: 'sharebuy/issupport',
         data: {
           station_id: self.parent.station_id
-        }
+        },
+        apiType: 'itApi'
       });
     };
   };
@@ -3192,6 +3200,8 @@ $(function () {
   };
   //--获取彩种匹配赛事匹配的推荐数量
   model.prototype.getBetMatchGrcmdNum = function () {
+    //关闭不获取fd
+    return;
     var shop = itou.localJson.getJson('/user/shop/details/'); //--店铺id信息
     var self = this;
     return itou.get({
@@ -3202,7 +3212,8 @@ $(function () {
       },
       rnd: false,
       notoken: true,
-      noToast: true
+      noToast: true,
+      apiType: 'itApi'
     }).then(function () {
       var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       self.grcmdNum = data;

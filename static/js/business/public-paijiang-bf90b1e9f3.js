@@ -127,7 +127,8 @@
         url: url[self.dataType],
         data: data,
         rnd: false,
-        notoken: true
+        notoken: true,
+        apiType: 'itApi'
       }).then(function (data) {
         self.formatData(data);
       });
