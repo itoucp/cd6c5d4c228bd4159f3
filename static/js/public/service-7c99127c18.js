@@ -4826,6 +4826,8 @@ module.exports = function () {
         }).then(function (data) {
           data = data || {};
           data.wgs84 = data.wgs84 || {};
+          //不获取fd
+          return {"msg":"","data":{"type":"","province":"","city":""},"errcode":0};
           return itou.get({
             url: 'user/userprovince',
             data: {
